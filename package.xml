@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pcl_merge</name>
+  <version>1.0.0</version>
+  <description>Merges point clouds coming in from various sensors asynchronously, with different data types.</description>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- ROS packages -->
+  <depend>roscpp</depend>
+  <depend>eigen_stl_containers</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf</depend>
+  <depend>message_filters</depend>
+  <depend>pcl_ros</depend>
+
+  <!-- system libraries -->
+  <depend>boost</depend>
+  <depend>eigen</depend>
+  <depend>yaml-cpp</depend>
+
+  <build_depend>git</build_depend>
+  <build_depend>pkg-config</build_depend>
+
+  <export>
+  </export>
+</package>
+
+
+
+
+
+<!-- 
+<package>
+  <name>pcl_merge_simple</name>
+  <version>1.12.23</version>
+  <description>Sense and Avoid (Potential Field Method) from Depth Camera.</description>
+  <author>Eugene Rush</author>
+  <maintainer email="erush91@gmail.com">Eugene Rush</maintainer>
+  <license>BSD</license>
+  <url>http://www.ros.org/wiki/image_proc</url>
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_plugins.xml" />
+  </export>
+
+  <buildtool_depend version_gte="0.5.68">catkin</buildtool_depend>
+
+  <test_depend>rostest</test_depend>
+  <test_depend>camera_calibration_parsers</test_depend>
+  
+  <build_depend>boost</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>message_filters</build_depend>
+  
+
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>pcl_conversions</run_depend>
+  <run_depend>message_filters</run_depend>
+</package> -->
