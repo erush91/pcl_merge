@@ -4,11 +4,15 @@
   <version>1.0.0</version>
   <description>Merges point clouds coming in from various sensors asynchronously, with different data types.</description>
 
+  <author>Eugene Rush</author>
+  <maintainer email="erush91@gmail.com">Eugene Rush</maintainer>
+  <license>BSD</license>
+
   <buildtool_depend>catkin</buildtool_depend>
 
   <!-- ROS packages -->
   <depend>roscpp</depend>
-  <depend>eigen_stl_containers</depend>
+  <!-- <depend>eigen_stl_containers</depend> -->
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
@@ -19,7 +23,7 @@
 
   <!-- system libraries -->
   <depend>boost</depend>
-  <depend>eigen</depend>
+  <!-- <depend>eigen</depend> -->
   <depend>yaml-cpp</depend>
 
   <build_depend>git</build_depend>

@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "-std=c++0x")
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  eigen_stl_containers
+  #  eigen_stl_containers
   geometry_msgs
   sensor_msgs
   std_msgs

@@ -1,6 +1,7 @@
 <launch>
-
+<!--
   <node pkg="tf" type="static_transform_publisher" name="body2ouster"  args="0 0 -0.1143 3.14159 0 3.14159 /base_link /os1_lidar 100"/>
+-->
 
   <arg name="MANAGER" value="standalone_nodelet" />
 <!--
@@ -16,7 +17,6 @@
       queue_size: 20
       output_frame: base_link
       input_topics:
-        - /os1_cloud_node/points
         - /up/up_camera/stream/1/cloud
         - /down/down_camera/stream/1/cloud
     </rosparam>
