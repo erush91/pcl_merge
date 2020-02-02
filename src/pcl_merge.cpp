@@ -26,6 +26,8 @@ bool approximate_sync_;
 
 ros::Publisher pub_output_;
 
+long int cnt = 0;
+
 // Reference Frames
 std::string robot_frame_;
 std::string ouster_frame_;
@@ -60,7 +62,9 @@ double down_pico_flexx_yaw;
 
 void callback(const PointCloud2::ConstPtr &cloud_ouster_ros, const PointCloud2::ConstPtr &cloud_up_pico_flexx_ros, const PointCloud2::ConstPtr &cloud_down_pico_flexx_ros)
 {
-  std::cout << "Entering callback!" << std::endl;
+
+  std::cout << "Entering callback" << std::endl;
+
 
   pcl::PointCloud<pcl::PointXYZI> cloud_ouster;
   pcl::fromROSMsg(*cloud_ouster_ros, cloud_ouster);
@@ -100,9 +104,13 @@ void callback(const PointCloud2::ConstPtr &cloud_ouster_ros, const PointCloud2::
   sensor_msgs::PointCloud2 cloud_merge_ros;
   pcl::toROSMsg(*cloud_merge, cloud_merge_ros);
 
+  cloud_merge_ros.header.stamp = ros::Time::now();
   cloud_merge_ros.header.frame_id = "base_link";
 
   pub_output_.publish (boost::make_shared<PointCloud2> (cloud_merge_ros));
+
+  cnt++;
+  std::cout << "Published merged point cloud #:" << cnt << std::endl;
 }
 
 int main(int argc, char** argv)
