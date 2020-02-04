@@ -115,7 +115,7 @@ void callback(const PointCloud2::ConstPtr &cloud_ouster_ros, const PointCloud2::
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "pcl_merge_simple");
+  ros::init(argc, argv, "pcl_merge");
   ouster_listener.reset(new tf::TransformListener);
   down_pico_flexx_listener.reset(new tf::TransformListener);
   up_pico_flexx_listener.reset(new tf::TransformListener);
@@ -134,9 +134,9 @@ int main(int argc, char** argv)
   // Method to get the most recent (and most synchronized) messages from the three sensors below
     // http://wiki.ros.org/message_filters/ApproximateTime
     // http://wiki.ros.org/message_filters
-  message_filters::Subscriber<PointCloud2> ouster_sub(nh, "/os1_cloud_node/points", 5);
-  message_filters::Subscriber<PointCloud2> up_pico_flexx_sub(nh, "/up/up_camera/stream/1/cloud", 5);
-  message_filters::Subscriber<PointCloud2> down_pico_flexx_sub(nh, "/down/down_camera/stream/1/cloud", 5);
+  message_filters::Subscriber<PointCloud2> ouster_sub(nh, "os1_cloud_node/points", 5);
+  message_filters::Subscriber<PointCloud2> up_pico_flexx_sub(nh, "up/up_camera/stream/1/cloud", 5);
+  message_filters::Subscriber<PointCloud2> down_pico_flexx_sub(nh, "down/down_camera/stream/1/cloud", 5);
 
   typedef sync_policies::ApproximateTime<PointCloud2, PointCloud2, PointCloud2> MySyncPolicy;
   // ApproximateTime takes a queue size as its constructor argument, hence MySyncPolicy(10)
