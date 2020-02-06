@@ -1,6 +1,5 @@
 <launch>
   <node pkg="pcl_merge" type="pcl_merge" name="pcl_merge" output="screen">
-    <remap from="output" to="cloud"/>
     <param name="max_queue_size" value="10"/>
     <param name="approximate_sync" value="true"/>
     <param name="output_frame" value="base_link"/>

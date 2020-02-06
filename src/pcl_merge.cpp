@@ -143,7 +143,7 @@ int main(int argc, char** argv)
   Synchronizer<MySyncPolicy> sync(MySyncPolicy(10), ouster_sub, up_pico_flexx_sub, down_pico_flexx_sub);
   sync.registerCallback(boost::bind(&callback, _1, _2, _3));
 
-  pub_output_ = private_nh.advertise<PointCloud2> ("output", maximum_queue_size_);
+  pub_output_ = private_nh.advertise<PointCloud2> ("cloud", maximum_queue_size_);
   
   // Get Ouster static transforms     
   try
