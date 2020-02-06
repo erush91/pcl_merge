@@ -1,7 +1,4 @@
 <launch>
-<!--
-  <node pkg="tf" type="static_transform_publisher" name="body2ouster"  args="0 0 -0.1143 3.14159 0 3.14159 /base_link /os1_lidar 100" output="screen"/>
--->
   <node pkg="pcl_merge" type="pcl_merge" name="pcl_merge" output="screen">
     <remap from="output" to="cloud"/>
     <param name="max_queue_size" value="10"/>
@@ -12,5 +9,4 @@
     <param name="up_pico_flexx_frame" value="up_camera_link"/>
     <param name="down_pico_flexx_frame" value="down_camera_link"/>
   </node>
-</group>
 </launch>
