@@ -1,14 +1,15 @@
 <launch>
-<group ns="B01">
+  <group ns="B01">
     <node pkg="pcl_merge" type="pcl_merge" name="pcl_merge" output="screen">
-      <remap from="os1_cloud_node/points" to="/os1_cloud_node/points"/>
+      <remap from="in1" to="/os1_cloud_node/points"/>
+      <remap from="in2" to="up/up_camera/stream/1/cloud"/>
+      <remap from="in3" to= "down/down_camera/stream/1/cloud"/>
       <param name="max_queue_size" value="10"/>
       <param name="approximate_sync" value="true"/>
-      <param name="output_frame" value="base_link"/>
-      <param name="robot_frame" value="base_link"/>
-      <param name="ouster_frame" value="os1_lidar"/>
-      <param name="up_pico_flexx_frame" value="up_camera_link"/>
-      <param name="down_pico_flexx_frame" value="down_camera_link"/>
+      <param name="output_frame" value="os1_lidar"/>
+      <param name="in2_frame" value="up_camera_link"/>
+      <param name="in3_frame" value="down_camera_link"/>
+      <!-- NOTE: THIS NODE ONLY WORKS WHEN THE OUTPUT FRAME IS OS1_LIDAR (I AM SAVING COMPUTE BY NOT HAVING TO TRANSFORM THE OUSTER PCL -->
     </node>
   </group>
 </launch>
