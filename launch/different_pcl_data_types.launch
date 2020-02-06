@@ -1,11 +1,14 @@
 <launch>
-  <node pkg="pcl_merge" type="pcl_merge" name="pcl_merge" output="screen">
-    <param name="max_queue_size" value="10"/>
-    <param name="approximate_sync" value="true"/>
-    <param name="output_frame" value="base_link"/>
-    <param name="robot_frame" value="base_link"/>
-    <param name="ouster_frame" value="os1_lidar"/>
-    <param name="up_pico_flexx_frame" value="up_camera_link"/>
-    <param name="down_pico_flexx_frame" value="down_camera_link"/>
-  </node>
+<group ns="B01">
+    <node pkg="pcl_merge" type="pcl_merge" name="pcl_merge" output="screen">
+      <remap from="os1_cloud_node/points" to="/os1_cloud_node/points"/>
+      <param name="max_queue_size" value="10"/>
+      <param name="approximate_sync" value="true"/>
+      <param name="output_frame" value="base_link"/>
+      <param name="robot_frame" value="base_link"/>
+      <param name="ouster_frame" value="os1_lidar"/>
+      <param name="up_pico_flexx_frame" value="up_camera_link"/>
+      <param name="down_pico_flexx_frame" value="down_camera_link"/>
+    </node>
+  </group>
 </launch>

@@ -67,12 +67,30 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
+        base_range:
+          Value: true
         down_camera_link:
           Value: false
         down_camera_optical_link:
           Value: false
+        fore_camera_aligned_depth_to_color_frame:
+          Value: true
+        fore_camera_color_frame:
+          Value: true
+        fore_camera_color_optical_frame:
+          Value: true
+        fore_camera_depth_frame:
+          Value: true
+        fore_camera_depth_optical_frame:
+          Value: true
         fore_camera_link:
           Value: false
+        gx5_link:
+          Value: true
+        map:
+          Value: true
+        odom:
+          Value: true
         os1_lidar:
           Value: false
         up_camera_link:
@@ -85,17 +103,30 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          down_camera_link:
-            down_camera_optical_link:
-              {}
-          fore_camera_link:
-            {}
-          os1_lidar:
-            {}
-          up_camera_link:
-            up_camera_optical_link:
-              {}
+        map:
+          odom:
+            base_link:
+              base_range:
+                {}
+              down_camera_link:
+                down_camera_optical_link:
+                  {}
+              fore_camera_link:
+                fore_camera_aligned_depth_to_color_frame:
+                  fore_camera_color_optical_frame:
+                    {}
+                fore_camera_color_frame:
+                  {}
+                fore_camera_depth_frame:
+                  fore_camera_depth_optical_frame:
+                    {}
+              gx5_link:
+                {}
+              os1_lidar:
+                {}
+              up_camera_link:
+                up_camera_optical_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -123,7 +154,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /B01/pcl_merge/output
+      Topic: /B01/pcl_merge/cloud
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -143,9 +174,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 2606
+      Max Intensity: 2895
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 57
       Name: PointCloud2
       Position Transformer: XYZ
       Queue Size: 10
@@ -173,9 +204,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 2893
+      Max Intensity: 88
       Min Color: 0; 0; 0
-      Min Intensity: 3
+      Min Intensity: 0
       Name: UP PICO FLEXX
       Position Transformer: XYZ
       Queue Size: 10
@@ -261,10 +292,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.37479639053344727
+      Pitch: 0.18479648232460022
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 0.7354171276092529
+      Yaw: 1.5454167127609253
     Saved: ~
 Window Geometry:
   Displays:
